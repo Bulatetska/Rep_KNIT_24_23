@@ -33,7 +33,12 @@
     &quot;last_opened_file_path&quot;: &quot;D:/КНІТ-24/Rep_KNIT_24_23/HeikoIhor&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.lab_4">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\КНІТ-24\Rep_KNIT_24_23\HeikoIhor\lab_4" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.lab_3 (1)">
     <configuration name="lab_2_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="HeikoIhor" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,8 +167,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.lab_4" />
         <item itemvalue="Python.lab_3 (1)" />
+        <item itemvalue="Python.lab_4" />
         <item itemvalue="Python.lab_3_2" />
         <item itemvalue="Python.lab_3_1" />
         <item itemvalue="Python.lab_2_2" />

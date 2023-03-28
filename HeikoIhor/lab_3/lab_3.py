@@ -1,22 +1,25 @@
-arr1 = list(range(1, 6))  # 1 2 3 4 5
 
-# TASK 1
-i = 0
-while i < len(arr1):
-    if arr1[i] % 2 == 0:
-        del arr1[i]
-    i += 1
+#TASK 1
+print("TASK_1:")
+numbers = [9,6,2,4,9,6,2,1,0,3] 
+print("Original List:", numbers)
 
-print("TASK 1:")
-print(arr1)
+del numbers[1::2]
 
-# TASK 2
-arr1 = [i*i for i in arr1]
+print("List after deleting even elements:", numbers)
 
-print("TASK 2:")
-print(arr1)
+#TASK 2
+print("\nTASK_2:")
+list1 = list(range(1,10)) #create list of numbers from 1 to 10
+list1 = [i*i for i in list1]
 
-# TASK 3
+print("List after squaring:", list1)
 
-print("TASK 3:")
-print(max(arr1))
+#TASK 3
+print("\nTASK_3:")
+list2 = list(range(10,20)) #create list of numbers from 1 to 10
+print(list2)
+
+maxElement = max(list2)
+print("Max Element:", maxElement)
+
