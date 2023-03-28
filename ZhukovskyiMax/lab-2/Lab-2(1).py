@@ -1,10 +1,5 @@
 price = float(input("Enter price: "))
 
-
-
-
-
-
 def serchSell(price):
     if price > 1000:
         pricediscount = 0.1
