@@ -1,0 +1,6 @@
+print("Завдання_3\nВведіть довжину списку:")
+n = int(input())
+print("Введіть список:")
+arr = input()
+list = list(map(int,arr.split(' ')))
+print(max(list))
