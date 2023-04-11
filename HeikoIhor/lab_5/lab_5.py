@@ -1,27 +1,59 @@
-import string
-import random
-import time
-import json
+# TASK 1
+def comparison(myValue):
+    if myValue > 0:
+        return myValue
+    else:
+        return "Число менше ніж 0"
 
-# Randomly choose a letter from all the ascii_letters
 
-f1 = open("random_string.txt", 'wt')
+value = -5
+print("(TASK 1) ", comparison(value))
 
-i = 0
-while i < 25:
-    randLetter = random.choice(string.ascii_letters)
-    f1.write(randLetter + " ")
-    i += 1
-f1.close()
+# TASK 2
+def lengthOfWord(myValue):
+    count = 0
+    for l in myValue:
+        if l.isalpha():
+            count = count + 1
+    return count
 
-#TASK 2
-listUsers = [{'name': "Артур", 'age': 22},{'name': "Кейт", 'age': 25},{'name': "Аліса", 'age': 19},{'name': "Майк", 'age': 35}]
 
-now = time.strftime("%d-%m-%y", time.localtime())
+value = "lab_6"
+print("(TASK 2) ", lengthOfWord(value))
 
-mainDict = {'data': listUsers, 'created_at': now}
 
-path = 'users_data_{}.json'.format(now)
+# TASK 3
+def raiseNumber(myNumber, exponent):
+    result = myNumber
+    if exponent > 0:
+        while exponent > 1:
+            result = result * myNumber
+            exponent = exponent - 1
 
-with open(path, 'w') as file:
-    json.dump(mainDict, file, indent=4)
+    return result
+
+
+value = 2
+exponent = 5
+print("(TASK 3) ", raiseNumber(value, exponent))
+
+# TASK 4
+def myRange(n):
+    if n > 1:
+        return list(range(1, n))
+
+
+n = 10
+print("(TASK 4) ", myRange(n))
+
+# TASK 5
+def areaRectangle(length, height):
+    if (length > 0 and height > 0) and length != height:
+        return length * height
+    else:
+        return "Invalid values entered "
+
+
+length = 10
+height = 5
+print("(TASK 5) Area of rectangle", areaRectangle(length, height))

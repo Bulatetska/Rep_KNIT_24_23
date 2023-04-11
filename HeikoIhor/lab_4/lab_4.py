@@ -21,7 +21,6 @@ print("TASK 2: ", C)
 # TASK 3
 C = list(A + B)
 
-        
 print("TASK 3: ", C)
 
 
@@ -43,7 +42,6 @@ print("TASK 4: ", result)
 
 # TASK 5
 array = ["shop", "market", "store", "beard", "market", "beard", "beard", "beard"]
-
 table = {} 
 
 for i in array:
@@ -55,7 +53,6 @@ for i in array:
 print("TASK 5: ", table)
 
 # TASK 6
-
 dict1 = {
     "brand": "Ford",
   "model": "Mustang",
@@ -67,7 +64,7 @@ print("TASK 6:")
 i = 1
 for key in dict1.keys():
     if i % 2 == 0:
-        print(key,":",dict1[key])
+        print(key, ":", dict1[key])
     i += 1
     
 # TASK 7
