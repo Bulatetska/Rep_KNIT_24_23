@@ -6,5 +6,5 @@ def find_max_positive(numbers):
         return "Число менше 0"
 
 
-numbers = [-2, -5, 1, -10, -6, -4, -8]
+numbers = [-2, -5, -1, -10, -6, -4, -8]
 print(find_max_positive(numbers))

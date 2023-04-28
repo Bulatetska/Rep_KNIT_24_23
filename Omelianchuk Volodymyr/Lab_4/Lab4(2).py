@@ -1,4 +1,4 @@
-a = "a14b6fh"
+a = "a14b6ah"
 
 if len(set(a)) == len(a):
     print("Всі символи унікальні")
