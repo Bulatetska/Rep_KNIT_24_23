@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ba52041-8d93-4869-a418-f7bfe521cafe" name="Changes" comment="" />
+    <list default="true" id="8668f288-bdad-4f96-83ba-859291302d30" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +13,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PBXWkdlWeYDQOLqSpbZcpfGbhA" />
+  <component name="ProjectId" id="2PBYwGBOxeF0QsO17gDnYfToML5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,7 +26,7 @@
 }</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="lab7" />
+      <module name="lab8" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -53,11 +50,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3ba52041-8d93-4869-a418-f7bfe521cafe" name="Changes" comment="" />
-      <created>1682931481326</created>
+      <changelist id="8668f288-bdad-4f96-83ba-859291302d30" name="Changes" comment="" />
+      <created>1682932178914</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682931481326</updated>
+      <updated>1682932178914</updated>
     </task>
     <servers />
   </component>
