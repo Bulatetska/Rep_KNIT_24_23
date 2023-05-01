@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5b237fd-8ba9-427d-8f8c-f0602437de63" name="Changes" comment="" />
+    <list default="true" id="56af0560-3f8f-479c-ab9e-bc6e83a3e398" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +16,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PBUmKxllnK9OcdXiipOIKZLJ8t" />
+  <component name="ProjectId" id="2PBVXahsurjEUous9dpjYc1qNZ2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,7 +29,7 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="lab5" />
+      <module name="lab6" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -53,11 +53,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e5b237fd-8ba9-427d-8f8c-f0602437de63" name="Changes" comment="" />
-      <created>1682930125316</created>
+      <changelist id="56af0560-3f8f-479c-ab9e-bc6e83a3e398" name="Changes" comment="" />
+      <created>1682930501564</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682930125316</updated>
+      <updated>1682930501564</updated>
     </task>
     <servers />
   </component>
@@ -66,7 +66,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>30</line>
+          <line>25</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
