@@ -1,13 +1,13 @@
-def print_models(unprinted_designs, completed_models):
-    while unprinted_designs:
-        current_design = unprinted_designs.pop()
+def squareNumbers(arr, result_arr):
+    while arr:
+        current_number = arr.pop()
         # Імітація друку моделі на 3D-принтері.
-        print("Printing model: " + current_design)
-        completed_models.append(current_design)
+        print("Number: " + str(current_number))
+        result_arr.append(current_number * current_number)
 
 
-def show_completed_models(completed_models):
-    print("\nThe following models have been printed:")
-    for completed_model in completed_models:
-        print(completed_model)
+def printResult(result_arr):
+    print("\nThe following squared numbers have been printed:")
+    for number in result_arr:
+        print(number)
 

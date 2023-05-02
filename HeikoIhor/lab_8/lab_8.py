@@ -1,11 +1,10 @@
-from mod import print_models, show_completed_models
+from mod import squareNumbers, printResult
 
 
-unprinted_designs = ['iphone case', 'robot pendant',
-    'dodecahedron']
-completed_models = []
+numbers_arr = [1, 2, 3, 4, 5]
+result_arr = []
 
-print_models(unprinted_designs, completed_models)
-show_completed_models(completed_models)
+squareNumbers(numbers_arr, result_arr)
+printResult(result_arr)
 
 
