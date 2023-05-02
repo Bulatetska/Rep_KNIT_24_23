@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "name": "Artur",
+            "age": 50
+        },
+        {
+            "name": "Kate",
+            "age": 82
+        },
+        {
+            "name": "Alisa",
+            "age": 96
+        },
+        {
+            "name": "Mike",
+            "age": 55
+        }
+    ],
+    "created_at": "02;05;23"
+}
