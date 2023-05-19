@@ -19,7 +19,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_addition_negative_integers(self):
         result = self.calculator.sum(-5, -6)
-        self.assertEqual(result, -10)
+        self.assertEqual(result, -11)
 
     def test_difference_two_integers(self):
         result = self.calculator.difference(10, 6)
