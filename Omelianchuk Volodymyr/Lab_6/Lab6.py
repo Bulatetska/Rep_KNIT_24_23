@@ -1,14 +1,25 @@
+import math
+
+
 class Car:
-    def __init__(self, brand, color, engineVolume):
+    def __init__(self, brand, color, engineVolume, amount_places):
         self.brand = brand
         self.color = color
         self.engineVolume = engineVolume
+        self.amount_places = amount_places
 
     def goForward(self):
         print(f"The {self.color} {self.brand} car is going forward.")
 
     def goBackward(self):
         print(f"The {self.color} {self.brand} car is going backward.\n")
+
+    def transportation(self, people):
+        return math.ceil(people / (self.amount_places - 1))
+
+    def print_transportation(self, people):
+        driving = Car.transportation(self, people)
+        print(f"Потрібно {driving} поїздок для перевезення {people} людей")
 
 
 class CarWithTurning(Car):
@@ -33,17 +44,5 @@ class FlyingCar(CarWithTurning, Airplane):
         Airplane.__init__(self, model)
 
 
-car1 = Car("BMW", "black", 4.5)
-car1.goForward()
-car1.goBackward()
-
-car2 = CarWithTurning("Audi", "white", 5.0)
-car2.turnLeft()
-car2.turnRight()
-
-airplane = Airplane("BSC")
-airplane.takeOff()
-
-flyingCar = FlyingCar("Mercedes", "green", 6.0, "BLC")
-flyingCar.goBackward()
-flyingCar.takeOff()
+car1 = Car("BMW", "black", 4.5, 5)
+car1.print_transportation(18)
