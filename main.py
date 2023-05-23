@@ -1,0 +1,3 @@
+import mishchuk
+
+mishchuk.printMishchuk()
