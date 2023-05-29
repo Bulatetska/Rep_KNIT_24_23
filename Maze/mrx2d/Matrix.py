@@ -71,6 +71,13 @@ class ObservableMatrix:
             "D coordinates for " + self.__dim.__str__() + "D matrix")
         self._data[idx] = value
         self.__notify(idx)
+    
+    def __delitem__(self, idx: tuple):
+        if idx.__len__() != self.__dim:
+            raise TypeError("Provided " + idx.__len__().__str__() + 
+            "D coordinates for " + self.__dim.__str__() + "D matrix")
+        del self._data[idx]
+        self.__notify(idx)
 
     def __getitem__(self, idx: tuple):
         if idx.__len__() == self.__dim:

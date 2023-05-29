@@ -2,16 +2,19 @@ from abc import abstractmethod
 
 
 class Tile:
+    def __init__(self) -> None:
+        self.collider = None
     @abstractmethod
     def getViewData()->object:
         pass
 
 class TileConsole(Tile):
-    def __init__(self, color:tuple, char:str):
+    def __init__(self, color:tuple, char:str, collider = True):
         if len(color) != 3:
             raise ValueError("Color must be a tuple of 3 ints")
         self.color = color
         self.char = char
+        self.collider = collider
         
     @staticmethod
     def colored(r, g, b, text):

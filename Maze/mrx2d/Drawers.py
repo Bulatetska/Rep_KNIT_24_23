@@ -1,6 +1,6 @@
 from abc import ABC, ABCMeta, abstractmethod
-from Matrix import ObservableMatrix as Matrix, MatrixObservator as Observator
-from Tiles import TileConsole
+from mrx2d.Matrix import ObservableMatrix as Matrix, MatrixObservator as Observator
+from mrx2d.Tiles import TileConsole
 from multiprocessing import Process
 import colorama #for colored ConsoleDrawer
 
@@ -42,8 +42,9 @@ class ConsoleDrawer(Drawer):
         n = size[1]
         matrix = self._data._data
         out_str = ""
-        for x in [(a, b) for a in range(0, n, 5) for b in range(0, m, 5)]:
-            out_str += matrix[x].getViewData()
-            if x[1] == 0:
+        for x in [(a, b) for a in range(0, n) for b in range(0, m)]:
+            if x[1] == 0 and x[0] != 0:
                 out_str += "\n"
+            out_str += matrix[x].getViewData()
+
         print(out_str)
