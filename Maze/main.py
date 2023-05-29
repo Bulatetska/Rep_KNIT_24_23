@@ -24,4 +24,5 @@ drawer = Drawer(output_matrix)
 drawer.drawAll()
 for i in range(0, 50):
     output_matrix.set_data(level_map[tuple([i])]._data)
+
     #time.sleep(0.05)

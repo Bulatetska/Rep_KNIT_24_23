@@ -1,6 +1,6 @@
 from abc import ABC, ABCMeta, abstractmethod
-from mrx2d.Matrix import ObservableMatrix as Matrix, MatrixObservator as Observator
-from mrx2d.Tiles import TileConsole
+from Matrix import ObservableMatrix as Matrix, MatrixObservator as Observator
+from Tiles import TileConsole
 from multiprocessing import Process
 import colorama #for colored ConsoleDrawer
 
