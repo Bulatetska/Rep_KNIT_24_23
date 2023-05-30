@@ -1,16 +1,5 @@
 import unittest
-
-class SimpleCalculator:
-    def sum(self, a, b):
-        return a + b
-    def diff(self, a, b):
-        return a-b
-    def mult(self, a, b):
-        return a * b
-    def div(self, a, b):
-        if b == 0:
-            raise ValueError("Division by zero is not allowed")
-        return a / b
+from calculator import SimpleCalculator
 
 class MyTestCase(unittest.TestCase):
     def setUp(self):
@@ -26,7 +15,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(result, 11)
 
     def test_diff_two_integer(self):
-        result = self.calculator.diff(5,6)
+        result = self.calculator.diff(9,6)
         self.assertEqual(result, -1)
 
     def test_mult_two_integers(self):
