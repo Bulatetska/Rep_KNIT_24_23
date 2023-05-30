@@ -1,4 +1,4 @@
-from module import squareNumbers, printResult
+from heiko import squareNumbers, printResult
 import mishchuk
 import test
 
