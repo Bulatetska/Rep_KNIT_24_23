@@ -1,12 +1,9 @@
-from heiko import squareNumbers, printResult
+import heiko
 import mishchuk
 import test
 
 print(mishchuk.add(1, 2))
 test.printTest()
 
-numbers_arr = [1, 2, 3, 4, 5]
-result_arr = []
-
-squareNumbers(numbers_arr, result_arr)
-printResult(result_arr)
+print("Reversed text:", heiko.reverse_string("Hello, World!"))
+print("Capitalized text:", heiko.capitalize_string("Hello, World!"))
