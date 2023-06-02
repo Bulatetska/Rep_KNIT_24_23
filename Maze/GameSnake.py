@@ -30,6 +30,7 @@ class GameSnake(Game):
         pass
 
     def End(self):
+        print("        GAME OVER       ")
         print("╔══════════════════════╗")
         print("║                      ║")
         print("║    Snake Game Result ║")
