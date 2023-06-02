@@ -24,13 +24,21 @@ class GameSnake(Game):
                 if i == 0 or j == 0 or i == 49 or j == 49:
                     self.map[(i,j)] = Tile((0,0,0), "#")
         
-        self.map[self.snakePos] = SnakeTile(self.snakeLength);
+        self.map[self.snakePos] = SnakeTile(self.snakeLength)
 
     def Loop(self): # TODO: Implement
         pass
 
-    def End(self): # TODO: Implement
-        pass
+    def End(self):
+        print("╔══════════════════════╗")
+        print("║                      ║")
+        print("║    Snake Game Result ║")
+        print("║                      ║")
+        print("╠══════════════════════╣")
+        print("║                      ║")
+        print("║      Score: {:>6}   ║".format(self.score))
+        print("║                      ║")
+        print("╚══════════════════════╝")
 
     def GetInput(self): # TODO: Implement
         pass

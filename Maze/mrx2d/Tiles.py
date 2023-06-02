@@ -5,7 +5,7 @@ class Tile:
     def __init__(self) -> None:
         self.collider = None
     @abstractmethod
-    def getViewData()->object:
+    def getViewData(self)->object:
         pass
 
 class TileConsole(Tile):
