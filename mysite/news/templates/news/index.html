@@ -1,0 +1,19 @@
+{% extends 'myapp/layout.html'%}
+{% load static %}
+{% block content %}
+<h3 class="news-title display-4">Новини</h3>
+<div class="flex-container">
+
+   {% for el in news %}
+      <div class="card">
+         <img class="card-img-top" src="/{{ el.image }}" alt="image">
+         <div class="card-body">
+            <h3 class="card-title">{{ el.title }}</h3>
+            <p class="card-text">{{ el.anons }}</p>
+            <div class="card-date">{{ el.date }}</div>
+            <a href="#" class="btn btn-primary">Детальніше</a>
+         </div>
+</div>
+  {% endfor %}
+</div>
+{% endblock %}z

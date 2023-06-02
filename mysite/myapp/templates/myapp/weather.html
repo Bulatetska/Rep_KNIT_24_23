@@ -1,0 +1,11 @@
+{% extends 'myapp/layout.html' %}
+
+{% block content %}
+{{ weather_info }}
+<form id="weather-form">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button type="submit">Отримати погоду</button>
+</form>
+<div class="weather-result"></div>
+{% endblock %}

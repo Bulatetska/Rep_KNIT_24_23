@@ -1,0 +1,110 @@
+* {
+   transition: 0.5s;
+   font-family: 'Montserrat', sans-serif;
+}
+header {
+   background: rgba(255, 255, 255, 0.6);
+}
+.logo {
+   color: black;
+   font-size: 36px;
+   font-family: 'Nova Square', cursive;
+}
+
+
+.news-title {
+   text-align: center;
+}
+
+.flex-container {
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   gap: 20px;
+   justify-content: center;
+}
+
+.telegram-link {
+   font-size: 35px;
+}
+
+.nav-telegram {
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+   justify-content: center;
+   margin-bottom: 0px;
+}
+
+.nav-telegram .title {
+   height: auto;
+   margin: auto;
+}
+
+.banner {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+}
+
+.banner-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+   z-index: 1;
+}
+
+.banner-title {
+   position: relative;
+   z-index: 2;
+   color: #ffffff;
+   margin-top: 40vh;
+   text-align: center;
+   font-size: 3rem;
+   animation: slideIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes slideIn {
+   0% {
+      transform: translateY(0);
+   }
+
+   100% {
+      transform: translateY(-20px);
+   }
+}
+
+#particles-js {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+.transparent-header {
+   transition: background-color 0.3s ease;
+}
+
+.transparent-header.scrolled {
+   background-color: rgba(255, 255, 255, 0.8);
+}
+
+#task-list {
+   list-style-type: none;
+}
+
+#task-list input[type="checkbox"] {
+   display: none;
+}
+
+#task-list label {
+   display: block;
+   cursor: pointer;
+}
+
+#task-list input[type="checkbox"]:checked+label {
+   text-decoration: line-through;
+   color: gray;
+}
