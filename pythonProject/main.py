@@ -1,8 +1,13 @@
-# Операція in - визначення наявності елементу в списку
-A = [ 'abc', 7, 8.5, -100 ]
+import random
+import string
 
-# Використання операції in
-item = 8 # шуканий елемент
-b = item in A # b = true
+red = random.randint(0, 255)
+green = random.randint(0, 255)
+blue = random.randint(0, 255)
+random_color = (red, green, blue)
 
-print("b = ",b)
+print(random_color)
+
+random_food_char = random.choice(string.ascii_uppercase)
+
+print(random_food_char)

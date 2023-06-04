@@ -1,4 +1,4 @@
-from DynamicTile import DynamicTile
+from Models.DynamicTile import DynamicTile
 from abc import abstractmethod, ABCMeta
 
 class CountdownTile(DynamicTile, metaclass=ABCMeta):

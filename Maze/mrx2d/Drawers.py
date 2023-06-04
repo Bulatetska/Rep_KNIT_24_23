@@ -45,6 +45,9 @@ class ConsoleDrawer(Drawer):
         for x in [(a, b) for a in range(0, n) for b in range(0, m)]:
             if x[1] == 0 and x[0] != 0:
                 out_str += "\n"
-            out_str += matrix[x].getViewData()
+            try:
+                out_str += matrix[x].getViewData()
+            except:
+                out_str += " "
 
         print(out_str)

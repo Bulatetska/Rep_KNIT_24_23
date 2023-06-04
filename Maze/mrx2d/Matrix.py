@@ -21,7 +21,7 @@ class ObservableMatrix:
         self.__subs = []
         self.__dim = (
             list(data.keys())[0].__len__()
-            if data.values().__len__() > 0
+            if data.__len__() > 0 #if data.values().__len__() > 0
             else dimensions
         )
 

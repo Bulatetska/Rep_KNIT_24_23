@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 #from mrx2d.Matrix import ObservableMatrix as Matrix
 from Models.GameMatrix import GameMatrix;
+import time
 
 class Game(ABC):
     def __init__(this):
-        this.map = GameMatrix()
+        this.map = GameMatrix(2)
         this.drawer = None;
 
     @abstractmethod
@@ -22,5 +23,5 @@ class Game(ABC):
     def Start(this):
         this.Init()
         while this.Loop():
-            pass
+            time.sleep(0.3)
         this.End()
