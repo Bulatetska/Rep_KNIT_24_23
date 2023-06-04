@@ -26,8 +26,28 @@ class GameSnake(Game):
         
         self.map[self.snakePos] = SnakeTile(self.snakeLength)
 
-    def Loop(self): # TODO: Implement
-        pass
+    def Loop(self):
+        while True:
+            self.map.Update()
+            self.GetInput()
+            next_pos = self.NextPos()
+
+            if self.IsSnakeCollision(next_pos) or self.IsWallCollision(next_pos):
+                return False
+
+            if self.IsFoodCollision(next_pos):
+                self.score += 10
+                self.snakeLength += 1
+                self.GenerateFood()
+
+            self.UpdateSnake(next_pos)
+            self.drawer.drawAll()
+
+            # Optional delay to control the speed of the game
+            # You can adjust the sleep time according to your preference
+            time.sleep(0.1)
+
+        return True
 
     def End(self):
         print("        GAME OVER       ")
