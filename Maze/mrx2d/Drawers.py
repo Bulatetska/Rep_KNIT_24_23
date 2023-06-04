@@ -2,7 +2,8 @@ from abc import ABC, ABCMeta, abstractmethod
 from mrx2d.Matrix import ObservableMatrix as Matrix, MatrixObservator as Observator
 from mrx2d.Tiles import TileConsole
 from multiprocessing import Process
-import colorama #for colored ConsoleDrawer
+import colorama
+import os
 
 def colored(r, g, b, text):
     return "\033[38;2;{};{};{}m{} \033[38;2;255;255;255m".format(r, g, b, text)
@@ -49,5 +50,5 @@ class ConsoleDrawer(Drawer):
                 out_str += matrix[x].getViewData()
             except:
                 out_str += " "
-
+        os.system("cls")
         print(out_str)
