@@ -64,5 +64,13 @@ class GameSnake(Game):
     def GetInput(self): # TODO: Implement
         pass
 
-    def NextPos(self) -> tuple: # TODO: Implement
-        pass
+    def NextPos(self) -> tuple: 
+            if  self.direction == Direction.DOWN:
+                nextPos = (self.snakePos[0] + 1, self.snakePos[1])
+            elif self.direction == Direction.UP:
+                nextPos = (self.snakePos[0] - 1, self.snakePos[1])
+            elif self.direction == Direction.LEFT:
+                nextPos = (self.snakePos[0], self.snakePos[1] - 1)
+            elif self.direction == Direction.RIGHT:
+                nextPos = (self.snakePos[0], self.snakePos[1] + 1)
+            return nextPos
