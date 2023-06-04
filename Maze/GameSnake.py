@@ -1,9 +1,12 @@
 from enum import Enum
+from Models.FoodTile import FoodTile
 from Models.Game import Game
+from Models.GameMatrix import GameMatrix
 from Models.SnakeTile import SnakeTile
 from mrx2d.Drawers import ConsoleDrawer as Drawer
 from mrx2d.Tiles import TileConsole as Tile
-
+import random
+import msvcrt
 
 class Direction(Enum):
     UP = 1
@@ -13,40 +16,48 @@ class Direction(Enum):
 
 class GameSnake(Game):
     def Init(self):
+        self.score = 0
         self.snakePos = (25,25)
         self.snakeLength = 1
         self.direction = Direction.UP
-        self.drawer = Drawer(self.map)
-        self.drawer.drawAll()
-        #fill the map with initial tiles (black border # 50*50)
+        #Намалювати стіну
         for i in range(0,50):
             for j in range(0,50):
                 if i == 0 or j == 0 or i == 49 or j == 49:
-                    self.map[(i,j)] = Tile((0,0,0), "#")
-        
+                    self.map[(i,j)] = Tile((255,255,255), "#")
+                else:
+                    self.map[(i,j)] = Tile((0,0,0), " ")
+        #Створити змійку
+        self.GenerateFood()
+        self.drawer = Drawer(self.map)
         self.map[self.snakePos] = SnakeTile(self.snakeLength)
+        self.drawer.drawAll()
+
+    def GenerateFood(self):
+        while True:
+            foodPos = (random.randint(1,48), random.randint(1,48))
+            if self.map[foodPos].char == " ":
+                self.map[foodPos] = FoodTile()
+                break
 
     def Loop(self):
-        while True:
-            self.map.Update()
-            self.GetInput()
-            next_pos = self.NextPos()
+        self.map.Update()
+        self.GetInput()
+        next_pos = self.NextPos()
+        next_tile = self.map[next_pos]
 
-            if self.IsSnakeCollision(next_pos) or self.IsWallCollision(next_pos):
-                return False
+        if isinstance(next_tile, SnakeTile) or next_tile.char == "#":
+            return False
 
-            if self.IsFoodCollision(next_pos):
-                self.score += 10
-                self.snakeLength += 1
-                self.GenerateFood()
+        if isinstance(next_tile, FoodTile):
+            self.score += 10
+            self.snakeLength += 1
+            next_tile.delete()
+            self.GenerateFood() 
 
-            self.UpdateSnake(next_pos)
-            self.drawer.drawAll()
-
-            # Optional delay to control the speed of the game
-            # You can adjust the sleep time according to your preference
-            time.sleep(0.1)
-
+        self.map[next_pos] = SnakeTile(self.snakeLength)
+        self.snakePos = next_pos
+        self.GenerateFood()
         return True
 
     def End(self):
@@ -61,8 +72,19 @@ class GameSnake(Game):
         print("║                      ║")
         print("╚══════════════════════╝")
 
-    def GetInput(self): # TODO: Implement
-        pass
+    def GetInput(self): 
+        if msvcrt.kbhit():
+            key = msvcrt.getch()
+            key = key.decode("utf-8").upper()
+            
+            if key == 'W':
+                self.direction =  Direction.UP
+            elif key == 'S':
+                self.direction = Direction.DOWN
+            elif key == 'A':
+                self.direction = Direction.LEFT
+            elif key == 'D':
+                self.direction = Direction.RIGHT
 
     def NextPos(self) -> tuple: 
             if  self.direction == Direction.DOWN:
