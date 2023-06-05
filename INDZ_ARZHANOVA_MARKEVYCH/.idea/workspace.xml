@@ -6,21 +6,15 @@
   <component name="ChangeListManager">
 <project version="4">
   <component name="ChangeListManager">
-<project version="4">
-  <component name="ChangeListManager">
     <list default="true" id="571ecdcc-3a13-4340-9ef3-20ee8e15b285" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/INDZ_ARZHANOVA_MARKEVYCH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/INDZ_ARZHANOVA_MARKEVYCH.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
     </list>
-  </component>
-</project>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
   </component>
 </project>
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +48,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }</component>
-  <component name="RunManager" selected="Python.main">
+<component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="INDZ_ARZHANOVA_MARKEVYCH" />
       <option name="INTERPRETER_OPTIONS" value="" />
