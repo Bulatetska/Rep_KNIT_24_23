@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<project version="4">
+  <component name="ChangeListManager">
+<project version="4">
+  <component name="ChangeListManager">
     <list default="true" id="571ecdcc-3a13-4340-9ef3-20ee8e15b285" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/INDZ_ARZHANOVA_MARKEVYCH.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/INDZ_ARZHANOVA_MARKEVYCH.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    </list>
+  </component>
+</project>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+  </component>
+</project>
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +26,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
+<component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+</component>
   </component>
   <component name="ProjectId" id="2QVQCFPZRMU7DDaPJ3uEV8cH6JM" />
   <component name="ProjectLevelVcsManager">
@@ -29,9 +49,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+"keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }</component>
   <component name="RunManager" selected="Python.main">
@@ -79,7 +99,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="571ecdcc-3a13-4340-9ef3-20ee8e15b285" name="Changes" comment="" />
+      <changelist id="978b5b2e-eef4-4b50-9a21-1de71d897fbc" name="Changes" comment="" />
       <created>1685436140797</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -87,7 +107,7 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
+<component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
