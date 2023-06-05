@@ -3,6 +3,11 @@ from mrx2d.Tiles import TileConsole
 from Models.DynamicTile import DynamicTile
 
 class GameMatrix(Matrix):
+    '''
+    Доповнення класу матриці для роботи з динамічнимими тайлами
+    Methods:
+        Update() : оновлення усіх доданих динамічних тайлів 
+    '''
     def __init__(self,dim , data = {}, default_tile = TileConsole((0,0,0), ' ')):
         super().__init__(dim, data)
         self._update_list = []

@@ -9,6 +9,9 @@ import random
 import msvcrt
 
 class Direction(Enum):
+    '''
+    Перелік напрямів
+    '''
     UP = 1
     DOWN = 2
     LEFT = 3
@@ -16,6 +19,9 @@ class Direction(Enum):
 
 class GameSnake(Game):
     def Init(self):
+        '''
+        Ініціалізація гри.
+        '''
         self.score = 0
         self.snakePos = (25,25)
         self.snakeLength = 1
@@ -34,6 +40,9 @@ class GameSnake(Game):
         self.drawer.drawAll()
 
     def GenerateFood(self):
+        '''
+        Згенерувати на мапі плитку їжі
+        '''
         while True:
             foodPos = (random.randint(1,48), random.randint(1,48))
             if self.map[foodPos].char == " ":
@@ -41,6 +50,9 @@ class GameSnake(Game):
                 break
 
     def Loop(self):
+        '''
+        Основний цикл гри
+        '''
         self.map.Update()
         self.GetInput()
         next_pos = self.NextPos()
@@ -61,6 +73,9 @@ class GameSnake(Game):
         return True
 
     def End(self):
+        '''
+        Вивід рахунку при завершенні гри
+        '''
         print("        GAME OVER       ")
         print("╔══════════════════════╗")
         print("║                      ║")
@@ -73,6 +88,9 @@ class GameSnake(Game):
         print("╚══════════════════════╝")
 
     def GetInput(self): 
+        '''
+        Перехоплення подій клавіатури
+        '''
         if msvcrt.kbhit():
             key = msvcrt.getch()
             key = key.decode("utf-8").upper()
@@ -87,6 +105,10 @@ class GameSnake(Game):
                 self.direction = Direction.RIGHT
 
     def NextPos(self) -> tuple: 
+            '''
+            Обрахунок клітинки, у якій буде "голова" змійки
+            на наступному кроці
+            '''
             if  self.direction == Direction.DOWN:
                 nextPos = (self.snakePos[0] + 1, self.snakePos[1])
             elif self.direction == Direction.UP:

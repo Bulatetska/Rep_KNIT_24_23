@@ -4,6 +4,17 @@ from Models.GameMatrix import GameMatrix;
 import time
 
 class Game(ABC):
+    '''
+    Абстрактний клас гри. 
+    Attributes:
+        map (Matrix): Матриця для мапи.
+        drawer (Drawer): Drawer для відображения матриці.
+    Methods:
+        Init(): Ініціалізація гри.
+        Loop(): Основний цикл гри.
+        End(): Завершення гри.
+        Start(): Запуск гри. Ініціалізація і запуска основного циклу.
+    '''
     def __init__(this):
         this.map = GameMatrix(2)
         this.drawer = None;

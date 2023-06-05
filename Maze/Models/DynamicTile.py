@@ -6,7 +6,9 @@ class DynamicTile(Tile, metaclass=ABCMeta):
     Abstract class for dynamic tiles.
     Attributes:
         map(GameMatrix): Game map.
-
+    Methods:
+        update(self): Update this tile.
+        delete(self): Delete this tile.
     '''
     def __init__(self, color: tuple, char: str):
         super().__init__(color, char)

@@ -3,6 +3,10 @@ import random
 import string
 
 class FoodTile(CountdownTile):
+    '''
+    Плитка їжі. Випадковий колір та символ при створенні.
+    Через 10 кроків(тіків) видаляється.
+    '''
     def __init__(self):
         red = random.randint(0, 255)
         green = random.randint(0, 255)
