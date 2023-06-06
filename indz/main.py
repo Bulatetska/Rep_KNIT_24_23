@@ -8,6 +8,9 @@ bot_token = '6019015707:AAGWfT8UdMd53adLR2XgnGP7g2Sly5SDO-4'
 # Ініціалізуємо об'єкт бота
 bot = telebot.TeleBot(bot_token)
 
+# Глобальна змінна для збереження останнього міста
+last_city = None
+
 # Функція для отримання перекладу погодних умов
 def translate_weather(weather):
     translations = {
@@ -54,12 +57,34 @@ def get_greeting():
 # Функція-обробник для команди /start
 @bot.message_handler(commands=['start'])
 def handle_start(message):
-    bot.reply_to(message, 'Привіт! Вітаю у боті погоди. Введи назву міста, щоб отримати погоду.')
+    keyboard = telebot.types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
+    button_weather = telebot.types.KeyboardButton(text='Перевірити погоду')
+    keyboard.add(button_weather)
+    bot.reply_to(message, 'Привіт! Вітаю у боті погоди. Введи назву міста, щоб отримати погоду.', reply_markup=keyboard)
+
+# Функція-обробник для команди /menu
+@bot.message_handler(commands=['menu'])
+def handle_menu(message):
+    keyboard = telebot.types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
+    button_weather = telebot.types.KeyboardButton(text='Перевірити погоду')
+    keyboard.add(button_weather)
+    bot.reply_to(message, 'Меню:', reply_markup=keyboard)
 
 # Функція-обробник для повідомлень з текстом
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
-    city = message.text
+    global last_city
+
+    if message.text == 'Перевірити погоду':
+        if last_city:
+            get_weather(message, last_city)
+        else:
+            bot.reply_to(message, 'Введи назву міста, щоб отримати погоду.')
+    else:
+        last_city = message.text
+        get_weather(message, last_city)
+
+def get_weather(message, city):
     try:
         # Виконуємо HTTP GET запит до OpenWeatherMap API
         url = f'http://api.openweathermap.org/data/2.5/weather?units=metric&q={city}&appid=6de5c543d5bdf025d51c06da496cdb82'
