@@ -1,8 +1,8 @@
 import telebot
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
-# Ініціалізуємо токен вашого телеграм-бота
+
 bot_token = '6019015707:AAGWfT8UdMd53adLR2XgnGP7g2Sly5SDO-4'
 
 # Ініціалізуємо об'єкт бота
@@ -32,7 +32,6 @@ def translate_weather(weather):
     }
     return translations.get(weather, 'Погода невідома')
 
-# Функція для отримання рекомендацій щодо фільмів або серіалів
 def get_recommendation(weather, temperature):
     translated_weather = translate_weather(weather)
     if 'Дощ' in translated_weather and temperature < 15:
@@ -55,22 +54,23 @@ def get_greeting():
         return "Доброї ночі! Сподіваюсь вона буде без повітряних тривог"
 
 # Функція-обробник для команди /start
+
 @bot.message_handler(commands=['start'])
 def handle_start(message):
     keyboard = telebot.types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
     button_weather = telebot.types.KeyboardButton(text='Перевірити погоду')
-    keyboard.add(button_weather)
+    button_forecast = telebot.types.KeyboardButton(text='Прогноз погоди на завтра')
+    keyboard.add(button_weather, button_forecast)
     bot.reply_to(message, 'Привіт! Вітаю у боті погоди. Введи назву міста, щоб отримати погоду.', reply_markup=keyboard)
 
-# Функція-обробник для команди /menu
 @bot.message_handler(commands=['menu'])
 def handle_menu(message):
     keyboard = telebot.types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
     button_weather = telebot.types.KeyboardButton(text='Перевірити погоду')
-    keyboard.add(button_weather)
+    button_forecast = telebot.types.KeyboardButton(text='Прогноз погоди на завтра')
+    keyboard.add(button_weather, button_forecast)
     bot.reply_to(message, 'Меню:', reply_markup=keyboard)
 
-# Функція-обробник для повідомлень з текстом
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
     global last_city
@@ -80,6 +80,11 @@ def handle_message(message):
             get_weather(message, last_city)
         else:
             bot.reply_to(message, 'Введи назву міста, щоб отримати погоду.')
+    elif message.text == 'Прогноз погоди на завтра':
+        if last_city:
+            get_weather_forecast(message, last_city)
+        else:
+            bot.reply_to(message, 'Введи назву міста, щоб отримати прогноз погоди на завтра.')
     else:
         last_city = message.text
         get_weather(message, last_city)
@@ -108,5 +113,38 @@ def get_weather(message, city):
 
     bot.reply_to(message, reply)
 
-# Запускаємо бота
+def get_weather_forecast(message, city):
+    try:
+        tomorrow = datetime.now() + timedelta(days=1)
+        tomorrow_date = tomorrow.strftime('%Y-%m-%d')
+        url = f'http://api.openweathermap.org/data/2.5/forecast?q={city}&appid=6de5c543d5bdf025d51c06da496cdb82'
+        response = requests.get(url)
+        data = response.json()
+
+        if response.status_code == 200:
+            forecast_list = data['list']
+            forecast = None
+            for item in forecast_list:
+                dt_txt = item['dt_txt']
+                if dt_txt.startswith(tomorrow_date) and '12:00:00' in dt_txt:
+                    forecast = item
+                    break
+
+            if forecast:
+                weather = forecast['weather'][0]['main']
+                temperature_kelvin = forecast['main']['temp']
+                temperature = temperature_kelvin - 273.15
+                reply = f'Прогноз погоди на завтра у місті {city}: {translate_weather(weather)}. Температура вдень: {temperature:.2f}°C.\n\n'
+                if 'Rain' in weather or 'Drizzle' in weather:
+                    reply += 'Очікується дощ.\n\n'
+            else:
+                reply = f'Не вдалося отримати прогноз погоди на завтра для міста {city}'
+        else:
+            reply = f'Не вдалося знайти погоду для міста {city}'
+    except requests.exceptions.RequestException:
+        reply = 'Помилка при отриманні погодових даних.'
+
+    bot.reply_to(message, reply)
+
+
 bot.polling()
